@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayajaal Chat - Private Chat App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Login Screen -->
+        <div id="loginScreen" class="screen active">
+            <div class="login-container">
+                <h1>Mayajaal Chat</h1>
+                <p class="subtitle">Secure 2-Person Chat</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Your Name:</label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            placeholder="Enter your name" 
+                            required
+                        >
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            placeholder="Enter password" 
+                            required
+                        >
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Join Chat</button>
+                </form>
+                
+                <div id="loginError" class="error-message"></div>
+            </div>
+        </div>
+
+        <!-- Chat Screen -->
+        <div id="chatScreen" class="screen">
+            <div class="chat-container">
+                <!-- Header -->
+                <div class="chat-header">
+                    <h2 id="chatTitle">Mayajaal Chat</h2>
+                    <div class="header-info">
+                        <span id="currentUser" class="current-user"></span>
+                        <span id="onlineStatus" class="online-status online">● Online</span>
+                    </div>
+                </div>
+
+                <!-- Messages -->
+                <div id="messagesContainer" class="messages-container">
+                    <div class="welcome-message">
+                        <p>Welcome to Mayajaal Chat!</p>
+                        <p class="text-muted">Start chatting with your friend</p>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="input-area">
+                    <form id="messageForm">
+                        <div class="message-input-wrapper">
+                            <input 
+                                type="text" 
+                                id="messageInput" 
+                                placeholder="Type a message..." 
+                                autocomplete="off"
+                            >
+                            <button type="submit" class="btn-send" title="Send message">
+                                <span>Send</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Footer -->
+                <div class="chat-footer">
+                    <button id="logoutBtn" class="btn-logout">Logout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js"></script>
+    
+    <!-- App Scripts -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
